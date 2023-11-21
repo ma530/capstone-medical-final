@@ -96,23 +96,23 @@
               <div class="form-row">
                 <div class="col-lg-6">
                   <div>
-                    <input type="text" placeholder="Your Name" />
+                    <input type="text" placeholder="Your Name" id="inputName" />
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div>
-                    <input type="text" placeholder="Phone Number" />
+                    <input type="text" placeholder="Phone Number" id="inputNumber" />
                   </div>
                 </div>
               </div>
               <div>
-                <input type="email" placeholder="Email" />
+                <input type="email" placeholder="Email" id="inputMail" />
               </div>
               <div>
-                <input type="text" class="message-box" placeholder="Message" />
+                <input type="text" class="message-box" placeholder="Message" id="inputMessage" />
               </div>
               <div class="btn_box">
-                <button onclick='document.getElementById("message").innerHTML="Email sent.";'>
+                <button id="send_bt" onclick='document.getElementById("message").innerHTML="Email sent.";'>
                   SEND
                 </button>
                 <p id="message"></p>

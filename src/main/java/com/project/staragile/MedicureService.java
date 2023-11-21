@@ -1,5 +1,7 @@
 package com.project.staragile;
 
+import java.util.Objects;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +32,25 @@ public class MedicureService {
 	
 	public String sayHello() {
 		return "Hello from Doctor Shubham";
+	}
+
+	public Doctor updateDoctor(String doctorRegistrationId, Doctor doctorName) {
+		Doctor doctor = getDoctorDetails(doctorRegistrationId);
+		 if (Objects.nonNull(doctor) ) {
+			 doctor.setDoctorName(doctorName.getDoctorName());
+			 doctorRepository.save(doctor);
+			 return doctor;
+		 }
+		return null;
+	}
+
+	public String deleteById(String doctorRegistrationId) {
+		Doctor doctor = getDoctorDetails(doctorRegistrationId);
+		  if (Objects.nonNull(doctor) ) {
+			  doctorRepository.delete(doctor);
+			  return "Successfully Deleted";
+		  }
+			return "Deletion Failed";
 	}
 
 }
